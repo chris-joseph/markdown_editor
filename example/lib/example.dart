@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:markdown_editor/markdown_editor.dart';
 
 main() {
   runApp(MaterialApp(home: Example()));
@@ -42,7 +43,7 @@ class _ExampleState extends State<Example> {
               height: 300,
               color: Colors.white,
               child: TextField(
-                controller: TextEditingController(),
+                controller: MarkdownEditingController(),
               ),
             ),
           ],

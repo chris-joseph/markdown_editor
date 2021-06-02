@@ -67,6 +67,15 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  markdown_editor:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: master
+      resolved-ref: "3fe70554405454d4a85908146f0c80eb79c6d1ae"
+      url: "https://github.com/chris-joseph/markdown_editor"
+    source: git
+    version: "0.0.1"
   matcher:
     dependency: transitive
     description:
@@ -88,6 +97,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0-nullsafety.1"
+  rxdart:
+    dependency: transitive
+    description:
+      name: rxdart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.25.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -151,3 +167,4 @@ packages:
     version: "2.1.0-nullsafety.3"
 sdks:
   dart: ">=2.10.0-110 <2.11.0"
+  flutter: ">=1.17.0"

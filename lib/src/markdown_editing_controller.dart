@@ -1,34 +1,26 @@
 import 'package:flutter/widgets.dart';
 
 class MarkdownEditingController extends TextEditingController {
-  final Map<RegExp, TextStyle> patternMap;
-  final Map<String, TextStyle> stringMap;
-  final Function(List<String> match) onMatch;
-  final bool deleteOnBack;
+  Map<RegExp, TextStyle> patternMap;
+  Map<String, TextStyle> stringMap;
+  Function(List<String> match) onMatch;
+  bool deleteOnBack;
   bool clearMatch = false;
 
-  MarkdownEditingController(
-      {String text,
-      this.patternMap,
-      this.stringMap,
-      this.onMatch,
-      this.deleteOnBack = false})
-      : assert((patternMap != null && stringMap == null) ||
+  MarkdownEditingController({
+    String text,
+  })  : assert((patternMap != null && stringMap == null) ||
             (patternMap == null && stringMap != null)),
         super(text: text);
 
-  MarkdownEditingController.fromValue(TextEditingValue value,
-      {this.patternMap,
-      this.stringMap,
-      this.onMatch,
-      this.deleteOnBack = false})
-      : assert(
+  MarkdownEditingController.fromValue(
+    TextEditingValue value,
+  )   : assert(
           !value.composing.isValid || value.isComposingRangeValid,
           'New TextEditingValue $value has an invalid non-empty composing range '
           '${value.composing}. It is recommended to use a valid composing range, '
           'even for readonly text fields',
         ),
-        assert(patternMap == null || stringMap == null),
         super.fromValue(value);
 
   @override
